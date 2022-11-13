@@ -1,6 +1,5 @@
 package com.rank.startup.repository;
 
-import com.rank.startup.dto.TransactionDto;
 import com.rank.startup.entities.Player;
 import com.rank.startup.entities.Transaction;
 import org.springframework.data.domain.Pageable;

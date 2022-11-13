@@ -1,9 +1,7 @@
 package com.rank.startup.entities;
 
 import com.rank.startup.enums.TransactionType;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

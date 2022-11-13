@@ -20,8 +20,8 @@ public class AdminController {
     private PlayerService playerService;
 
     @PostMapping("/player/transactions")
-    public ResponseEntity<List<TransactionDto>> updateBalance(@Valid @RequestBody TransactionsRequestDto listTransactionsRequestDto){
-        List<TransactionDto> transactionDtos = playerService.findPlayerTransactions(listTransactionsRequestDto.getUsername());
+    public ResponseEntity<List<TransactionDto>> listTransactions(@Valid @RequestBody TransactionsRequestDto listTransactionsRequestDto){
+        List<TransactionDto> transactionDtos = playerService.findPlayerLatestTransactions(listTransactionsRequestDto.getUsername());
         return new ResponseEntity<>(transactionDtos, HttpStatus.OK);
     }
 }

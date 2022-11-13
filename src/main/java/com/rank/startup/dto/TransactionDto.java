@@ -2,6 +2,7 @@ package com.rank.startup.dto;
 
 import com.rank.startup.enums.TransactionType;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 import javax.validation.constraints.Min;
@@ -9,6 +10,7 @@ import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Data
+@Builder
 @AllArgsConstructor
 public class TransactionDto {
     private Integer transactionId;

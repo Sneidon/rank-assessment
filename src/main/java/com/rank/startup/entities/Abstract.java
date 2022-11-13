@@ -1,5 +1,6 @@
 package com.rank.startup.entities;
 
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;

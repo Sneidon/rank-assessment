@@ -12,6 +12,7 @@ import com.rank.startup.mappers.PlayerMapper;
 import com.rank.startup.mappers.TransactionMapper;
 import com.rank.startup.repository.PlayerRepository;
 import com.rank.startup.repository.TransactionRepository;
+import com.rank.startup.utils.Calculations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -54,9 +55,9 @@ public class PlayerServiceImpl implements PlayerService {
         }
 
         if(transactionDto.getTransactionType() == TransactionType.WIN) {
-            player.setBalance(addToBalance(player.getBalance(), transactionDto.getAmount()));
+            player.setBalance(Calculations.addToBalance(player.getBalance(), transactionDto.getAmount()));
         } else {
-            player.setBalance(subtractBalance(player.getBalance(), transactionDto.getAmount()));
+            player.setBalance(Calculations.subtractBalance(player.getBalance(), transactionDto.getAmount()));
         }
 
         Transaction transaction = transactionMapper.toEntity(transactionDto);
@@ -69,7 +70,7 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public List<TransactionDto> findPlayerTransactions(String username) {
+    public List<TransactionDto> findPlayerLatestTransactions(String username) {
         Optional<Player> playerOptional = playerRepository.findByUsernameIgnoreCase(username);
         Player player = playerOptional.orElseThrow(() -> new PlayerNotFoundException(String.format("Player %s not found", username)));
 
@@ -78,13 +79,5 @@ public class PlayerServiceImpl implements PlayerService {
         return transactions.stream()
                 .map(transaction -> transactionMapper.toDto(transaction))
                 .collect(Collectors.toList());
-    }
-
-    private BigDecimal addToBalance(BigDecimal balance, BigDecimal amount) {
-        return balance.add(amount);
-    }
-
-    private BigDecimal subtractBalance(BigDecimal balance, BigDecimal amount) {
-        return balance.subtract(amount);
     }
 }

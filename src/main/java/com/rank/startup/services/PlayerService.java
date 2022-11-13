@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface PlayerService {
     PlayerDto findPlayer(Integer playerId);
-    List<TransactionDto> findPlayerTransactions(String username);
+    List<TransactionDto> findPlayerLatestTransactions(String username);
     TransactionResponseDto updateBalance(Integer playerId, TransactionDto transactionDto);
 }
