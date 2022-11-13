@@ -10,4 +10,8 @@ class CasinoStartUpApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	public void applicationStarts() {
+		CasinoStartUpApplication.main(new String[] {});
+	}
 }
