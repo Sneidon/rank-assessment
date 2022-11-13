@@ -22,7 +22,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class PlayerServiceImplTest {
     @Mock
-    PlayerService playerService = new PlayerServiceImpl();;
+    PlayerService playerService;
 
     @Test
     void givenExistingPlayerId_WhenFindPlayer_ReturnPlayer() {
