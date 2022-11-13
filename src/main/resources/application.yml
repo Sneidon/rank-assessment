@@ -1,0 +1,25 @@
+server:
+  servlet:
+    context-path: /casino
+  error:
+    include-exception: false
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:casino
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+    data: classpath:Data.sql
+  h2:
+    console.enabled: true
+
+
