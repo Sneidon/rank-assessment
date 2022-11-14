@@ -17,7 +17,7 @@ public class Player extends Abstract {
 
     @NotNull(message = "balance is required field")
     @Column(name = "balance")
-    private BigDecimal balance;
+    private volatile BigDecimal balance;
 
     @OneToMany(mappedBy = "player", orphanRemoval = true, fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     private List<Transaction> transactions;

@@ -26,7 +26,7 @@ class PlayerServiceImplTest {
 
     @Test
     void givenExistingPlayerId_WhenFindPlayer_ReturnPlayer() {
-        when(playerService.findPlayer(1)).thenReturn(new PlayerDto(1, BigDecimal.ONE, null));
+        when(playerService.findPlayer(1)).thenReturn(new PlayerDto(1, BigDecimal.ONE));
         assertThat(playerService.findPlayer(1)).isNotNull();
     }
 

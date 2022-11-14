@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -13,5 +12,5 @@ import java.util.List;
 public class PlayerDto {
     private Integer playerId;
     private BigDecimal balance;
-    private List<TransactionDto> transactions;
+   // private List<TransactionDto> transactions;
 }
