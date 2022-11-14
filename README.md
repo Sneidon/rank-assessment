@@ -18,6 +18,13 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 mvn spring-boot:run
 ```
 
+## Testing data
+
+I have seeded 3 users
+- Id: 1, username: John
+- Id: 2, username: Jane
+- Id: 3, username: Musa
+
 ## Copyright
 
 Released under the Apache License 2.0. See the [LICENSE](https://github.com/codecentric/springboot-sample-app/blob/master/LICENSE) file.
